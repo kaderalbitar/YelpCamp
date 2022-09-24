@@ -27,15 +27,15 @@ const seedDB = async () => {
       price,
       geometry: {
         type: "Point",
-        coordinates: [-113.1331, 47.0202]
+        coordinates: [cities[random1000].longitude, cities[random1000].latitude]
       },
       images: [
         {
-          url: 'https://res.cloudinary.com/dxvxciwmi/image/upload/v1663779704/YelpCamp/jaxagyijoeqd87fygapw.jpg',
+          url: 'https://res.cloudinary.com/dxvxciwmi/image/upload/v1664025000/YelpCamp/tents_ztyiwu.jpg',
           filename: 'YelpCamp/jaxagyijoeqd87fygapw',
         },
         {
-          url: 'https://res.cloudinary.com/dxvxciwmi/image/upload/v1663779707/YelpCamp/s9pmgcvw7dxxdmi3mccq.jpg',
+          url: 'https://res.cloudinary.com/dxvxciwmi/image/upload/v1664024981/YelpCamp/sun_jkesa7.jpg',
           filename: 'YelpCamp/s9pmgcvw7dxxdmi3mccq',
         }
       ]
