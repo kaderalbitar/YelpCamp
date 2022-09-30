@@ -14,6 +14,8 @@ const LocalStrategy = require('passport-local');
 
 const User = require('./models/user');
 
+const helmet = require('helmet');
+
 const mongoSanitize = require('express-mongo-sanitize');
 
 const ExpressError = require('./utils/ExpressError');
@@ -59,6 +61,14 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 app.use(flash());
+
+app.use(helmet({
+  contentSecurityPolicy: false,
+  crossOriginEmbedderPolicy: false,
+  crossOriginOpenerPolicy: false,
+  crossOriginResourcePolicy: false,
+  originAgentCluster: false 
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
