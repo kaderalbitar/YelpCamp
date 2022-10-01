@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+}
+
 const mongoose = require('mongoose');
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
@@ -21,7 +25,7 @@ const seedDB = async () => {
     const random1000 = Math.floor(Math.random() * 1000);
     const price = Math.floor(Math.random() * 20) + 10;
     const camp = new Campground({
-      author: '6290e0ba8f7a949845d389ac',
+      author: '63382e4a83cef7cf7a59e833',
       location: `${cities[random1000].city}, ${cities[random1000].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
       description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro itaque pariatur exercitationem at quisquam odio quas amet suscipit, facilis vel illum sunt mollitia delectus, temporibus ex officia. Hic, molestiae alias?',
